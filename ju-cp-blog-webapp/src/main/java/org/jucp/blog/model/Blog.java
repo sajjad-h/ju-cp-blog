@@ -20,7 +20,7 @@ public class Blog {
     @Column(name = "post_title")
     private String postTitle;
 
-    @Column(name = "post")
+    @Column(columnDefinition = "TEXT", name = "post")
     private String post;
 
     @Column(name = "post_date")

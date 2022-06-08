@@ -35,4 +35,11 @@ public class BlogController {
         blogService.saveBlog(blog);
         return "redirect:/blogs";     
     }
+
+    @PostMapping("/pictureUpload")
+    public String pictureUpload(Model model) {
+        System.out.println(model.toString());
+        System.out.println("hitted ***");
+        return "redirect:/blogs";
+    }
 }
