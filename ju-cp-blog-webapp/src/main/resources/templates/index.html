@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JU CP blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container my-2">
+        <h1>Blog list</h1>
+        <a th:href="@{/blogs/showNewBlogForm}" class="btn btn-primary btn-sm mb-3"> Add New Blog </a>
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> User Name </th>
+                    <th> Post Title </th>
+                    <th> Post </th>
+                    <th> Post Date </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="blog: ${blogs}">
+                    <td th:text="${blog.id}"></td>
+                    <td th:text="${blog.userName}"></td>
+                    <td th:text="${blog.postTitle}"></td>
+                    <td th:utext="${blog.post}"></td>
+                    <td th:text="${blog.postDate}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
